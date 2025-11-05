@@ -1,16 +1,20 @@
-cadena = input("Introduce una cadena que tenga 4 carateres: ")
-salida = ""
+cadena = ""
 
 while len(cadena) <= 4:
-        cadena = input("Introduce una cadena que tenga 4 caracteres: ")
+    cadena = input("Introduce una cadena con más de 4 caracteres: ")
 
-if cadena % 2 == 0:               
-    salida = cadena[2] + cadena[4]
+numero = int(input("Introduce un número: "))
 
-elif cadena % 3 == 0:
-      salida = cadena[1] + cadena[3]
+resultado = ""
 
-elif cadena % 7 == 0:
-      salida = cadena[0] + cadena[3]
+if numero % 2 == 0 and len(cadena) > 4:
+    if len(cadena) > 4:
+        resultado += cadena[2] + cadena[4]
 
-print(salida)
+if numero % 3 == 0 and len(cadena) > 2:
+    resultado += cadena[1] + cadena[2]
+
+if numero % 7 == 0 and len(cadena) > 3:
+    resultado += cadena[0] + cadena[3]
+
+print("Resultado:", resultado)
