@@ -16,7 +16,7 @@ def segundos_a_hms(segundos_totales):
 
 opcion = ""
 
-while opcion != "-1":
+while True:
     print("S: Convertir a segundos")
     print("M: Convertir a minutos")
     print("H: Convertir a horas")
@@ -24,15 +24,18 @@ while opcion != "-1":
     opcion = input("Introduzca su elección: ") .upper()
     entrada = input("Introduce el tiempo total en segundos (ej. 7385): ")
     segundos = int(entrada)
+    if opcion == "-1":
+        False
+    while opcion !=-1:
+        entrada = input("Introduce el tiempo total en segundos (ej. 7385): ")
+        if opcion == "H":
+            resultado = segundos_a_hms(segundos)
+            print("Desglose: ", str(resultado))
 
-    if opcion == "H":
-        resultado = segundos_a_hms(segundos)
-        print("Desglose: ", str(resultado))
+        elif opcion == "M":
+            minutos = segundos / 60
+            print(" Minutos: ", str(minutos))
 
-    elif opcion == "M":
-        minutos = segundos / 60
-        print(" Minutos decimales: ", str(minutos))
-
-    elif opcion == "S":
-        print("Ya está en segundos: ", str(segundos))
+        elif opcion == "S":
+            print("Ya está en segundos: ", str(segundos))
 print("Fin del programa")

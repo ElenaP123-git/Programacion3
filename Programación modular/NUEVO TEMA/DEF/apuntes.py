@@ -13,3 +13,7 @@ def saludar(nombre = "Desconocido"):
     return "Buenas tardes, señor ", nombre
 print(saludar()) # Nombre toma el valor desconocido
 print(saludar("Pepe")) # Nombre toma el valor  Pepe
+
+def calcCadena(pas1,pas2,numero):
+    salida = numero[pas1] + numero[pas2]
+    print(salida)
