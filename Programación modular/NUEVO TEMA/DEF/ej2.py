@@ -5,5 +5,3 @@ def esMultiplo(num1,num2):
 es = esMultiplo(6,2)  #print(esMultiplo(6,2))
 if es:
     print("Son múltiplos")
-else:
-    print("No son múltiplos")
