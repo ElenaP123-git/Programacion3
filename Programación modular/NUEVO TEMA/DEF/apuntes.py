@@ -19,7 +19,6 @@ def saludar():
 
 saludar()  # → Hola Elena
 
-
 # MUTABLES E INMUTABLES
 def suma(n1, n2):
     n1 = n1+1 # no sirve
