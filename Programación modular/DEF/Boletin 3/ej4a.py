@@ -8,9 +8,11 @@ def estaOrdenada(lista): # coge la lista de abajo
     return ordenada
 
 lista = [1,2,3,4]
-orden = estaOrdenada(lista)
+orden = estaOrdenada(lista) # orden = estaOrdenada([1,2,3,4])
 print(orden)
 
 lista = [1,8,3,4]
-orden = estaOrdenada([1,8,3,4])
+orden = estaOrdenada([1,8,3,4]) # orden = estaOrdenada([1,8,3,4])
 print(orden)
+
+estaOrdenada()

@@ -1,22 +1,22 @@
-def obtengolista(): #lee lista por teclado
+def obtengolista():  # lee lista por teclado
     lista = []
-    rep = True
-    while rep:
-        num = int(input("Introduce un número: "))
+    # todo
+    while True:
+        num = int(input("Introduce un número (0 para terminar): "))
         lista.append(num)
         if num == 0:
-            rep = False
-    #todo
+            break
     return lista
 
-def listainvertida(lista): # a partir de una lista devolver la lista invertida
-    print(lista)
+def listainvertida(lista):  # devuelve la lista invertida
+    print("Lista original:", lista)
     invertida = []
-    for i in range (len(lista)-1,-1,-1):
+    # todo
+    for i in range(len(lista) - 1, -1, -1):
         invertida.append(lista[i])
-    #todo
     return invertida
 
-listainicial = obtengolista(1, 2)
+# Programa principal
+listainicial = obtengolista()
 listainversa = listainvertida(listainicial)
-print(listainversa)
+print("Lista invertida:", listainversa)
