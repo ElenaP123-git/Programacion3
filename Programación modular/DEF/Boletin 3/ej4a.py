@@ -14,5 +14,3 @@ print(orden)
 lista = [1,8,3,4]
 orden = estaOrdenada([1,8,3,4]) # orden = estaOrdenada([1,8,3,4])
 print(orden)
-
-estaOrdenada()

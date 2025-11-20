@@ -59,4 +59,4 @@ def ejecutar_pruebas_ejercicio_5():
     resultado_c2 = estaOrdenada(lista_desordenada, ascendente=False)
     print("4. Lista desordenada [1, 5, 3, 9], ascendente=False: **" + str(resultado_c2) + "**")
     
-# ejecutar_pruebas_ejercicio_5()
+ejecutar_pruebas_ejercicio_5()

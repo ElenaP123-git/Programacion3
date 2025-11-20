@@ -36,3 +36,24 @@ n1 = [2, 3, 4] # las listas son mutables, las variables (como arriba), no
 n2= 3
 print(suma(n1,n2))
 print(n1)
+
+def esMultiplo(num1,num2):
+    esMultiplo = num1 % num2 == 0
+    return esMultiplo
+es = esMultiplo(6,2)  #print(esMultiplo(6,2))
+if es:
+    print("Son múltiplos")
+
+def segundos_a_hms(segundos_totales):
+    # 3600 segundos/hora
+    horas = segundos_totales // 3600
+    # calcular los segundos restantes después de las horas
+    segundos_restantes = segundos_totales % 3600
+    # 60 segundos/minuto
+    minutos = segundos_restantes // 60
+    # calcular segundos finales (el resto de los minutos)
+    segundos_finales = segundos_restantes % 60
+    return horas,"horas", minutos,"minutos", segundos_finales, "segundos"
+entrada = input("Introduce el tiempo total en segundos (ej. 7385): ")
+segundos = int(entrada)
+print(segundos_a_hms(segundos))
