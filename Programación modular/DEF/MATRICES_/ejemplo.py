@@ -14,7 +14,6 @@ def suma_fila (matriz, num_fila):
 print(suma_fila(matriz,1)) # suma elementos de la fila 2 (9)
 
 def suma_matriz(matriz, resultado):
-    # todo
     for i in matriz:
         for a in i:
             resultado += a
