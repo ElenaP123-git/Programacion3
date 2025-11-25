@@ -57,3 +57,17 @@ def segundos_a_hms(segundos_totales):
 entrada = input("Introduce el tiempo total en segundos (ej. 7385): ")
 segundos = int(entrada)
 print(segundos_a_hms(segundos))
+
+print("Hola mundo")
+assert (3+2 == 5) # si no se cumple (3+2=6)no imprime el "Adios" y da un error
+print("Adios")
+def suma (num1, num2): # otro ejemplo
+    return num1+num2
+print("Hola mundito")
+assert(suma(3,2 == 5))
+print("Adioss")
+def cuadrado_num(numero): #otro
+    return numero **2
+assert(cuadrado_num(9)>0)
+assert(cuadrado_num(-9) == 81)
+print("yes")
