@@ -21,14 +21,25 @@ def media_hotel(lista_media):
 
 def get_columna(num_columna, matriz):
     columna = []
-    for i in range (0, len(matriz)): # del 0 al 4
+    for i in range (len(matriz)): # del 0 al 4
         columna.append(matriz[i][num_columna])
     return columna
 
-def calcula_column_det(matriz, num_columna):
-    calcula_columna = get_columna(matriz)
-    # ???
-    return
+def calcula_media_column(matriz): # corregido
+    columna0 = get_columna(0,matriz)
+    return calcula(columna0)
+    
+def calcula_media_col_det(matriz,num_columna):
+    columna = get_columna(num_columna,matriz)
+    return calcula(columna)
+
+def calcula_med_por_hab(matriz):
+    num_habitaciones = len(matriz[0]) #num de columnas
+    lista_medias = []
+    for col in range(num_habitaciones):
+        media_col = calcula_media_col_det(matriz,col)
+        lista_medias.append(media_col)
+    return lista_medias
 
 matriz = [
 [22,20,19,21],
@@ -47,5 +58,14 @@ print(lista_media)
 temp_hotel = media_hotel(lista_media)
 print(temp_hotel)
 
-columna = get_columna(matriz)
-print(columna) # ???
+# Columna 0
+print("Columna 0:", get_columna(0, matriz))
+
+# Media columna 0
+print("Media columna 0:", calcula_media_column(matriz))
+
+# Media columna determinada (ejemplo columna 2)
+print("Media columna 2:", calcula_media_col_det(matriz, 2))
+
+# Lista de medias por habitación (por columnas)
+print("Medias por habitación:", calcula_med_por_hab(matriz))
