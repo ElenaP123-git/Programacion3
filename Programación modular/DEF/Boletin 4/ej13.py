@@ -1,4 +1,5 @@
-matriz = [[8, 1, 6],
+matriz = [
+          [8, 1, 6],
           [3, 5, 7],
           [4, 9, 2]
 ]
@@ -40,5 +41,20 @@ def suma_por_filas_igual(matriz):
 
 resultado = suma_por_filas_igual(matriz)
 print(resultado)
-          
-          
+
+def sumaPorColumnasIgual(matriz):
+
+    num_filas = len(matriz)
+    num_columnas = len(matriz[0])
+    
+    sumas_columnas = [0] * num_columnas
+    
+    for j in range(num_columnas):
+
+        for i in range(num_filas):
+            
+            sumas_columnas[j] += matriz[i][j]
+            
+    sonIguales = son_iguales(sumas_columnas)
+    
+    return sumas_columnas, sonIguales

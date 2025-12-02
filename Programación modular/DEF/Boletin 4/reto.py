@@ -22,13 +22,5 @@ def col_filas(cadena,matriz):
 descifrando=col_filas(cadena,matriz)
 print(descifrando)
 
-palabra = "NO SOLO HAY QUE CONFIAR EN EL PROCESO, HAY QUE SEGUIRLO"
-
-def descif_palabra(palabra,matriz):
-    for letras in palabra:
-        desc = col_filas(cadena,matriz) == letras
-    return desc
-
-descc = descif_palabra(palabra,matriz)
-print(descc)
+palabra = ("NO SOLO HAY QUE CONFIAR EN EL PROCESO, HAY QUE SEGUIRLO")
 

@@ -1,3 +1,4 @@
+# creación de una matriz
 def crear_matriz_posicion(num_filas, num_columnas):
     matriz = [] 
 
@@ -11,7 +12,7 @@ def crear_matriz_posicion(num_filas, num_columnas):
         
     return matriz
 
-filas = 2
+filas = 4
 columnas = 5
 
 matriz_generada = crear_matriz_posicion(filas, columnas)
