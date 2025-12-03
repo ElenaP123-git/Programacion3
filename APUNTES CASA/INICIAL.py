@@ -1,5 +1,5 @@
 # Una función es un bloque de código que se puede REUTILIZAR
-def nombre_funcion(parametros):
+def nombre_funcion(parametros): # "parametros" no sirve para nada, se lee después del return (ej abajo:  matriz letras)
     # código que hace algo
     return resultado
 
@@ -131,12 +131,89 @@ matrix = [[1,2,3],
           [7,8,9]]
 
 def imprimir_diagonales(matrix):
-    num_filas_y_col = len(matrix)
-    diagonal_principal = [matrix[i][i] for i in range(num_filas_y_col)]
-    diagonal_secundaria = [matrix[i][num_filas_y_col -1 -i] for i in range(num_filas_y_col)]
+    num_filas_y_col = len(matrix) # numero de filas (igual que columnas pq es cuadrada)
+    diagonal_principal = [matrix[i][i] for i in range(num_filas_y_col)] # [i][i] es para que la dp sea [1][1], [2][2]...
+    diagonal_secundaria = [matrix[i][num_filas_y_col -1 -i] for i in range(num_filas_y_col)] # num_f_c = 3 -> [i][num_filas_y_col -1 -i] -> [0,2], [1,1], [2,0]
+    #                                                                                          se -i porque si no, imprime todos los últimos elementos de cada fila
     
     return diagonal_principal, diagonal_secundaria
 
 dp,ds = imprimir_diagonales(matrix)
 print("Diagonal principal:", dp)
 print("Diagonal secundaria:", ds)
+
+
+# ABECEDARIO (ELEMENTOS ESPECÍFICOS DE LA MATRIZ)
+matriz_letras = [
+    ["A", "B", "C", "D", "E"],
+    ["F", "G", "H", "I", "J"],
+    ["K", "L", "M", "N", "O"],
+    ["P", "Q", "R", "S", "T"],
+    ["U", "V", "W", "X", "Y"]
+]
+
+def formar_palabra(matriz, posiciones):
+    palabra = ""
+    for fila, col in posiciones:
+        palabra += matriz[fila][col]
+    return palabra
+
+print(formar_palabra(matriz_letras, [(0,0),(1,2),(2,4)]))  # "AHO"
+                                     # posiciones (fila,col)
+
+# ROTAR MATRIZ 90º
+def rotar_90(matriz):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+    nueva = []
+    for j in range(columnas):
+        fila_nueva = []
+        for i in range(filas-1, -1, -1): # filas al revés
+            fila_nueva.append(matriz[i][j]) # cambia filas por columnas
+        nueva.append(fila_nueva)
+    return nueva
+
+m = [[1,2,3],[4,5,6],[7,8,9]]
+print(rotar_90(m))  # [[7,4,1],[8,5,2],[9,6,3]]
+
+
+# SUMA POR FILAS
+def suma_filas(matriz):
+    resultado = []
+    for i in range(len(matriz)):
+        total_fila = 0
+        for j in range(len(matriz[i])):
+            total_fila = total_fila + matriz[i][j]
+        resultado.append(total_fila)
+    return resultado
+
+m = [[1,2,3],[4,5,6],[7,8,9]]
+print(suma_filas(m))  # [6, 15, 24]
+
+
+# SUMA POR COLUMNAS
+def suma_columnas(matriz):
+    resultado = []
+    columnas = len(matriz[0])
+    filas = len(matriz)
+    for j in range(columnas):
+        total_col = 0
+        for i in range(filas):
+            total_col = total_col + matriz[i][j]
+        resultado.append(total_col)
+    return resultado
+
+m = [[1,2,3],[4,5,6],[7,8,9]]
+print(suma_columnas(m))  # [12, 15, 18]
+
+
+# BUSCAR UN ELEMENTO EN LA MATRIZ
+def buscar(matriz, valor):
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] == valor:
+                return (i, j)   # devuelve fila y columna si lo encuentra
+    return None # si no lo encuentra, devuelve "nada"
+
+m = [[1,2,3],[4,5,6],[7,8,9]]
+print(buscar(m, 5))  # (1,1)
