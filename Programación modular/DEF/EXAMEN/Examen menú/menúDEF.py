@@ -67,20 +67,20 @@ def mostrar_mayores(productos, precios):
 
     print("Productos con precio superior al importe dado:")
     for i in range(len(lista)):
-        prod = lista[i][0]      # Primer elemento de la tupla
+        prod = lista[i][0]      # Primer elemento de la tupla        # KE
         precio = lista[i][1]    # Segundo elemento de la tupla
         print(prod)
         print(precio)
 
-def menu_opciones(dinero, productos, precios, total):  # Menú para hacer más acciones
+def menu_opciones(dinero, productos, precios, total):  # Menú para hacer más acciones      #OJO
     salir = False  # Controla si el usuario quiere salir
-    while not salir:
+    while not salir:                                                                  
         print("Opciones:")
         print("S: Calcular dinero sobrante")
         print("R: Eliminar un producto y su precio de la lista")
         print("C: Mostrar productos cuyo precio es mayor que un importe dado")
         print("X: Salir")
-        opcion = input("Introduce una opción: ").upper()  # Pide opción
+        opcion = input("Introduce una opción: ").upper()  
 
         if opcion == "S":
             calcular_sobrante(dinero, total)  # Calcula lo que sobra
@@ -99,7 +99,7 @@ def menu_opciones(dinero, productos, precios, total):  # Menú para hacer más a
         else:
             print("Opción inválida.")  # Si no es una opción válida
 
-# Programa principal
+# Programa principal (LO PONE TOODO EN MARCHA)
 dinero = pedir_dinero()  # Pide el dinero
 productos, precios, total = agregar_productos(dinero)  # Añade productos
 mostrar_lista(productos, precios)  # Muestra lo que compraste
