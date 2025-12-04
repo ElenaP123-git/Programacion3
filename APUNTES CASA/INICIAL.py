@@ -7,8 +7,7 @@ def nombre_funcion(parametros): # "parametros" no sirve para nada, se lee despu�
 def suma(a, b):
     return a + b
 
-print(suma(3, 4))  # Resultado: 7
-# Aquí solo se imprime, no se guarda en una variable.
+print(suma(3, 4))  # Resultado: 7  Aquí solo se imprime, no se guarda en una variable.
 # Si quiero reutilizarlo, debo guardarlo:
 resultado = suma(3, 4)
 print(resultado)       # 7
@@ -217,3 +216,27 @@ def buscar(matriz, valor):
 
 m = [[1,2,3],[4,5,6],[7,8,9]]
 print(buscar(m, 5))  # (1,1)
+
+
+# ASSERT
+print("Hola mundo")
+assert (3+2 == 5) # si no se cumple (3+2=6)no imprime el "Adios" y da un error
+print("Adios")
+
+def suma (num1, num2): # otro ejemplo
+    return num1+num2
+print("Hola mundito")
+assert(suma(3,2) == 5)
+print("Adioss")
+
+def cuadrado_num(numero): #otro
+    return numero **2
+assert(cuadrado_num(9)>0)
+assert(cuadrado_num(-9) == 81)
+print("yes")
+
+def calCULO (n1,n2):
+    return n1+n2
+assert calCULO(2, 3) == 5   #sirve para asegurarse de que cualquier acción lógica te de lo que tu pongas ahí
+                #en este caso pones como "verdad absoluta" que 2+3=5, si en tu función el resultado no te da 5 te da un assert error 
+print("Correcto")
